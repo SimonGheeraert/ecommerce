@@ -1,0 +1,18 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    
+    <h1> {{ user_object.username }} </h1>
+
+    {% for id, quantity in cart %}
+    <div>
+      {% for i in range(1, quantity) %}
+        <a title="Remove this item" href="{{ path('cart_remove', {'id': id}) }}">
+          <h1> {{ id }} </h1>
+        </a>
+      {% endfor %}
+      <span>({{ quantity }} {{ id }})</span>
+    </div>
+    {% endfor %}
+
+{% endblock %}

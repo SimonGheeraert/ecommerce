@@ -1,0 +1,14 @@
+body {@include container(100%);
+	header{@include span(12 of 12);
+		height: 150px;
+		background-color: #7A0000;
+		color: white;
+		h1 {
+			color: white;
+			font-size: 50px;
+			font-family: 'Roboto';
+			-webkit-font-smoothing: antialiased;
+			font-weight: 100;
+		}
+	}
+}

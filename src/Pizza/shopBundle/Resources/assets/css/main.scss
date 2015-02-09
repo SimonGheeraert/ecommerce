@@ -1,0 +1,56 @@
+@import "reset";
+@import "bourbon/bourbon";
+@import "neat/neat";
+@import "susy";
+
+$susy: (
+  columns: 12,  
+  gutters: 0/4, // The size of a gutter in relation to a single column //
+);
+
+body {@include container(100%);
+	header{@include span(12 of 12);
+		height: 150px;
+		background-color: #FFB870;
+		color: white;
+		h1#brand {
+			@include span(5 of 12);
+			color: white;
+			font-size: 60px;
+			font-family: 'Roboto';
+			-webkit-font-smoothing: antialiased;
+			font-weight: 400;
+			@include pre(1 of 12);
+			margin-top: 40px;
+		}
+		nav{
+			margin-top: 75px;
+			float: right;
+			@include span(5 of 12);
+			@include post(1 of 12);
+			ul{
+				@include span(5 of 12);
+				float: right;
+				li{
+					@include prefix(1 of 12);
+					display: inline;
+					a{
+						text-decoration: none;
+						color: #1A120B;
+						font-family: 'Roboto';
+						-webkit-font-smoothing: antialiased;
+						font-weight: 100;
+						strong{
+							font-weight: 300;
+						}			
+					}
+				}
+			}
+		}
+	}
+}
+//
+@import "body";
+@import "footer";
+
+

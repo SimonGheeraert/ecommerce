@@ -1,0 +1,20 @@
+{% for id, quantity in cart %}
+<div class="item">
+  {% for product in products %}
+  	{% if id == product.id %}
+  		<span class="name"><h4>{{ product.productName }} (amount: {{quantity}})</h4></span>
+  		<a title="Remove this item" href="{{ path('cart_remove', {'id': id}) }}" class="remove">
+    	<h4>remove</h4>
+    	</a>
+  		<span class="quantity"><h4>{{ quantity }} * {{ product.price }} &euro; </h4></span>
+  		<span class="total"><h4> = {{ quantity * product.price }} &euro; </h4></span>
+  	{% endif %}
+  {% endfor %}
+  {% for i in range(1, id) %}
+  {% endfor %}
+</div>
+{% else %}
+	<p id="nothing">nothing yet in your shopping cart.</p>
+{% endfor %}
+
+<div id="order"><a href="{{ path('cart_order') }}">order</a></div>

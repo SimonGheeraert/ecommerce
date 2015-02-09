@@ -1,0 +1,199 @@
+div#company_baseline{
+	@include span(12 of 12);
+	height: 120px;
+	background-color: #FFEBD6;
+	h2{
+		font-family: 'Roboto';
+		-webkit-font-smoothing: antialiased;
+		line-height: 120px;
+		color: #FFB870;
+		font-weight: 300;
+		font-size: 30px;
+		text-align: center;
+	}
+}
+
+div#products{
+	@include span(12 of 12);
+	@include pad(1 of 12);
+	height: 550px;
+	background-color: #FFEBD6;
+	div#product_list{
+		margin-top: 0.1em; 
+		z-index: 0;
+		@include span(24 of 24);
+		.hover-tile-outer{
+
+		}
+	}
+}
+
+.hover-tile-outer {
+  ///////////////////////////////////////////////////////////
+  $base-border-color: #FFEBD6 !default;
+  $base-line-height: 0.1em !default;
+  $medium-screen: em(640) !default;
+
+  h4 {
+    margin: 0;
+  }
+
+  p {
+    line-height: 1.5em;
+  }
+  ////////////////////////////////////////////////////////////////////
+
+  $hover-tile-height: 15em;
+
+  background: url("http://i1.wp.com/www.princanada.com/wp-content/uploads/2013/02/Heart_Shaped_Tuscan_Pizza_Insitu_m.jpg");
+  background-color: beige;
+  border: 1px solid $base-border-color;
+  height: $hover-tile-height;
+  margin-bottom: $base-line-height;
+  
+  @include media($medium-screen) {
+    @include span(4 of 12);
+  }
+
+  .hover-tile-container {
+    height: $hover-tile-height;
+    overflow: hidden;
+  }
+
+  .hover-tile-container:hover > .hover-tile {
+    @include transform(translate(0, -100%));
+  }
+
+  .hover-tile {
+    @include transition(all, 0.4s ease-in-out);
+    background: inherit;
+    color: white;
+    height: inherit;
+    overflow: hidden;
+  }
+//
+  .hover-tile-hidden {
+
+  	text-align: center;
+  	font-family: 'Roboto';
+  	font-color: #FFEBD6;
+    background: transparentize(#000, 0.5);
+
+    p {
+      color: transparentize(#FFEBD6, 0.3);
+      font-size: 11px;
+      line-height: 18px;
+      font-weight: 10;
+    }
+
+    #head{
+    	h5 {
+    		padding-bottom: 0.3em;
+    	}
+	    h4 {
+	      padding-top: 0.2em;
+	      padding-bottom: 0.2em;
+	      margin-bottom: 0.2em;
+	      text-transform: uppercase;
+	      letter-spacing: 1px;
+	      font-size: 2em;
+	   	  font-color: #FFEBD6;
+	   	  border: 1px solid #FFEBD6;
+	    }
+	}
+
+    a{
+    	margin-top: 2em;
+    	text-align: center;
+   	    font-color: #FFEBD6;
+	    #plus {
+	    	text-align: center;
+	     	color: #FFEBD6;
+	    }
+	}
+  }
+}
+
+/////////////////////////////////////////
+#shoppingCart{
+	background-color: #FFEBD6;
+	@include span(12 of 12);
+	@include pad(1 of 12);
+	height: 500px;
+}
+
+#stripe{
+	background-color: #FFD6AD;
+	@include span(12 of 12);
+	@include prefix(1 of 12);
+	@include suffix(1 of 12);
+	height: 40px;
+}
+//////////////////////
+#heading{
+	font-family: 'Roboto';
+	@include span(12 of 12);
+	h2{
+		padding-top: 10px;
+		padding-bottom: 10px;
+		font-size: 1.5em;
+		font-weight: 100;
+		@include squish(3.5 of 12);
+		@include span(5 of 12);
+		text-align: center;
+		border: 1px solid #FFB870;
+		color: #FFB870;
+	}
+}
+
+#cart{
+	@include span(12 of 12);
+	font-family: 'Roboto';
+	#items{
+		@include squish(3.5 of 12);
+		@include span(5 of 12);
+		border-bottom: 1px solid #FFB870;
+		border-right: 1px solid #FFB870;
+		border-left: 1px solid #FFB870;
+		.item{
+			padding-top: 2em;
+			padding-bottom: 2em;
+			font-weight: 100;
+			border-bottom: 1px dotted #FFB870;
+			span.name{
+				@include span(5 of 12);
+			}
+			span.quantity{
+				@include span(3 of 12);
+			}
+			span.total{
+				@include span(2 of 12);
+			}
+			a.remove{
+				@include span(2 of 12);
+				color: #FFB870;
+			}
+		}
+		p{
+			text-align: center;
+			padding-top: 1em;
+			font-weight: 100;
+		}
+		div#order{
+			@include span(6 of 12);
+			a{
+				@include span(4 of 4);
+				@include pad(3.5 of 4);
+				text-align: center;
+				padding-top: 2em;
+				color: #FFB870;
+				padding-bottom: 2em;
+				font-weight: 500;
+			}
+		}
+	}
+}
+
+//
+
+

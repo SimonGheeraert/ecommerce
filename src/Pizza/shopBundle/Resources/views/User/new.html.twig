@@ -1,0 +1,29 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>User creation</h1>
+
+    {% set cart = app.session.get('cart') %}
+
+    {% for key,value in cart %}
+
+    	<span><h3>Item number {{ key }}</h3></span>
+    	<span><i> with a quantity of</i></span>
+    	<span><h3> {{ value }} </h3></span>
+    	<hr>
+    	<br>
+
+    {% endfor %}
+
+    <a href=" {{ url('login_route') }} "><h2>Already a registered member?</h2></a>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    		<li>
+        		<a href="#">
+            	Back to the list
+        		</a>
+    		</li>
+		</ul>
+{% endblock %}

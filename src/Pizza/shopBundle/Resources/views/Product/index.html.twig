@@ -1,0 +1,51 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Product list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Price</th>
+                <th>Productname</th>
+                <th>Description</th>
+                <th>Categoryid</th>
+                <th>Picture</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+
+            <form>
+                    <a href="{{ path('product_show', { 'id': entity.id }) }}">{{ entity.id }}</a><br>
+                    {{ entity.price }}<br>
+                    {{ entity.productName }}<br>
+                    {{ entity.description }}<br>
+                    {{ entity.categoryId }}<br>
+                    {{ entity.picture }}<br>
+                <br>
+                <span>
+                    <input type="radio" name="size" value="small">small
+                    <input type="radio" name="size" value="medium" checked>medium
+                    <input type="radio" name="size" value="large">large
+                </span>
+                <br>
+                Quantity: <input type="text">
+                <br>
+                <input type="submit" value="Add to Shopping Cart">
+                <hr>
+            </form>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('product_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}
